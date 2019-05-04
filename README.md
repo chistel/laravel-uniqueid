@@ -14,7 +14,7 @@ composer require chistel/uniqueid
 
 Your Eloquent models should use the `Chistel\LaravelUniqueId\HasUniqueId` trait and the `Chistel\LaravelUniqueId\UniqueIdOptions` class.
 
-The trait contains an abstract method `getSlugOptions()` that you must implement yourself. 
+The trait contains an abstract method `getUniqueIdOptions()` that you must implement yourself. 
 
 Here's an example of how to implement the trait:
 
