@@ -1,4 +1,4 @@
-# UniqueId is simliar to [Spatie Sluggable](https://github.com/spatie/laravel-sluggable) as it was mimicked from it.
+# laravel-uniqueid is simliar to [Spatie Sluggable](https://github.com/spatie/laravel-sluggable) as it was mimicked from it.
 
 but the difference is that it's meant to use unique string for model routes.
 
@@ -7,7 +7,7 @@ but the difference is that it's meant to use unique string for model routes.
 
 You can install the package via composer:
 ``` bash
-composer require chistel/uniqueid
+composer require chistel/laravel-uniqueid
 ```
 
 ## Usage
@@ -21,11 +21,11 @@ Here's an example of how to implement the trait:
 ```php
 <?php
 
-namespace App;
+namespace App\Models;
 
+use Illuminate\Database\Eloquent\Model;
 use Chistel\LaravelUniqueId\HasUniqueId;
 use Chistel\LaravelUniqueId\UniqueIdOptions;
-use Illuminate\Database\Eloquent\Model;
 
 class UserModel extends Model
 {
