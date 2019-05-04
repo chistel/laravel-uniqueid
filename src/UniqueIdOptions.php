@@ -1,6 +1,6 @@
 <?php
 
-namespace Chistel\UniqueId;
+namespace Chistel\LaravelUniqueId;
 
 class UniqueIdOptions
 {

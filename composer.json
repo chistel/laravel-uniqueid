@@ -1,5 +1,5 @@
 {
-    "name": "chistel/uniqueid",
+    "name": "chistel/laravel-uniqueid",
     "description": "Generate uniqueid when saving Eloquent models to be used as auth key and route key",
     "keywords": [
         "chistel",
@@ -23,7 +23,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Chistel\\UniqueId\\": "src/"
+            "Chistel\\LaravelUniqueId\\": "src/"
         }
     }
 }

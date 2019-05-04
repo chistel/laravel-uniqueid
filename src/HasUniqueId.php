@@ -1,6 +1,6 @@
 <?php
 
-namespace Chistel\UniqueId;
+namespace Chistel\LaravelUniqueId;
 
 use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\Model;
@@ -51,9 +51,9 @@ trait HasUniqueId
 	protected function makeUniqueIdUnique(): string
 	{
 		do {
-	       $uniqueId = Str::random($this->uniqueIdOptions->maximumLength);
-	       $checkCode = static::where($this->uniqueIdOptions->uniqueIdField, $uniqueId)->exists();
-	    } while($checkCode > 0);
+		   $uniqueId = Str::random($this->uniqueIdOptions->maximumLength);
+		   $checkCode = static::where($this->uniqueIdOptions->uniqueIdField, $uniqueId)->exists();
+		 } while($checkCode > 0);
 
 		return $uniqueId;
 	}

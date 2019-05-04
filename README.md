@@ -12,7 +12,7 @@ composer require chistel/uniqueid
 
 ## Usage
 
-Your Eloquent models should use the `Chistel\UniqueId\HasUniqueId` trait and the `Chistel\UniqueId\UniqueIdOptions` class.
+Your Eloquent models should use the `Chistel\LaravelUniqueId\HasUniqueId` trait and the `Chistel\LaravelUniqueId\UniqueIdOptions` class.
 
 The trait contains an abstract method `getSlugOptions()` that you must implement yourself. 
 
@@ -23,23 +23,32 @@ Here's an example of how to implement the trait:
 
 namespace App;
 
-use Chistel\UniqueId\HasUniqueId;
-use Chistel\UniqueId\UniqueIdOptions;
+use Chistel\LaravelUniqueId\HasUniqueId;
+use Chistel\LaravelUniqueId\UniqueIdOptions;
 use Illuminate\Database\Eloquent\Model;
 
-class YourEloquentModel extends Model
+class UserModel extends Model
 {
-    use HasUniqueId;
+   use HasUniqueId;
     
-    /**
-     * Get the options for generating model uniqueId.
-     */
-    public function getUniqueIdOptions() : UniqueIdOptions
-    {
-        return UniqueIdOptions::create()
-         ->saveUniqueIdTo('user_unique_id')
-            ->uniqueIdShouldBeNoLongerThan(8);
-    }
+   /**
+	 * Get the route key for the model.
+	 *
+	 * @return string
+	 */
+	public function getRouteKeyName()
+	{
+	    return 'user_unique_id';  // this is the unique key column 
+	}
+	/**
+	* Get the options for generating model uniqueId.
+	*/
+	public function getUniqueIdOptions() : UniqueIdOptions
+	{
+	  	return UniqueIdOptions::create()
+	   	->saveUniqueIdTo('user_unique_id') // this is the unique key column 
+	      	->uniqueIdShouldBeNoLongerThan(8);
+	}
 }
 ```
 the uniqueid is only available on model creating.
