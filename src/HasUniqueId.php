@@ -14,12 +14,12 @@ trait HasUniqueId
 	abstract public function getUniqueIdOptions(): UniqueIdOptions;
 
 
-    protected static function bootHasUniqueId()
-    {
-        static::creating(function (Model $model) {
-            $model->generateUniqueId();
-        });
-    }
+	protected static function bootHasUniqueId()
+	{
+	  	static::creating(function (Model $model) {
+	      $model->generateUniqueId();
+	  	});
+	}
 	/**
 	* Handle adding UniqueId on model creation.
 	*/
@@ -53,7 +53,7 @@ trait HasUniqueId
 		do {
 		   $uniqueId = Str::random($this->uniqueIdOptions->maximumLength);
 		   $checkCode = static::where($this->uniqueIdOptions->uniqueIdField, $uniqueId)->exists();
-		 } while($checkCode > 0);
+		} while($checkCode > 0);
 
 		return $uniqueId;
 	}
