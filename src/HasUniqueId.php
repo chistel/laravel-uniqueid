@@ -1,4 +1,14 @@
 <?php
+/**
+ * Copyright (C) 2019, Chistel Brown,  - All Rights Reserved
+ * @project              laravel-uniqueid
+ * @file                     HasUniqueId.php
+ * @author               Chistel
+ * @github                   <http://github.com/chistel>
+ * @twitter               <http://twitter.com/chistel>
+ * @lastmodified    13/10/2019, 1:48 AM
+ *
+ */
 
 namespace Chistel\LaravelUniqueId;
 
@@ -13,7 +23,9 @@ trait HasUniqueId
 	*/
 	abstract public function getUniqueIdOptions(): UniqueIdOptions;
 
-
+   /**
+    *
+    */
 	protected static function bootHasUniqueId()
 	{
 	  	static::creating(function (Model $model) {

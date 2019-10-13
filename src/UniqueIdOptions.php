@@ -1,4 +1,14 @@
 <?php
+/**
+ * Copyright (C) 2019, Chistel Brown,  - All Rights Reserved
+ * @project              laravel-uniqueid
+ * @file                     UniqueIdOptions.php
+ * @author               Chistel
+ * @github                   <http://github.com/chistel>
+ * @twitter               <http://twitter.com/chistel>
+ * @lastmodified    13/10/2019, 1:47 AM
+ *
+ */
 
 namespace Chistel\LaravelUniqueId;
 
